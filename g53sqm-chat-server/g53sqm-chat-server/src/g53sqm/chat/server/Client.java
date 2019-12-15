@@ -9,7 +9,10 @@ public class Client {
     private Socket socket;
     private OnMessageReceivedListener listener;
     public PrintWriter writer;
+    //public String user;
     private int loginFlag = 0;
+    public int hailFlag = 0;
+    public int p_messageFlag = 0;
 
 
     public Client(){
@@ -25,6 +28,7 @@ public class Client {
         }
 
     }
+
     public void login(String Username){
         String login = "IDEN ";
         String login_username = login + Username;
@@ -32,6 +36,19 @@ public class Client {
         writer.flush();
         loginFlag = 1;
     }
+
+    public void generateStat(){
+        String stat = "STAT";
+        writer.println(stat);
+        writer.flush();
+    }
+
+    public void Quit(){
+        String quit = "QUIT";
+        writer.println(quit);
+        writer.flush();
+    }
+
 
     public void addListener(OnMessageReceivedListener listener) {
         this.listener = listener;
@@ -96,9 +113,29 @@ public class Client {
 
     }
 
+//    public void SendHailMessage(String Message, String user){
+//        try {
+//            if (hailFlag == 1){
+//                Message = "HAIL " + Message;
+//            } else if (p_messageFlag == 1){
+//                Message = "MESG " + user + " " + Message;
+//            }
+//            writer.println(Message);
+//            writer.flush();
+//        }
+//        catch (Exception e){
+//            System.err.println(e.getMessage());
+//        }
+//    }
 
-    public void SendMessage(String Message){
+
+    public void SendMessage(String Message, String user){
         try {
+            if (hailFlag == 1){
+                Message = "HAIL " + Message;
+            } else if (p_messageFlag == 1){
+                Message = "MESG " + user + " " + Message;
+            }
             writer.println(Message);
             writer.flush();
         }
@@ -106,6 +143,7 @@ public class Client {
             System.err.println(e.getMessage());
         }
     }
+
 
 //    public void connect(){
 //

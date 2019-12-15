@@ -2,10 +2,7 @@ package g53sqm.chat.server;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import javax.jws.soap.SOAPBinding;
 import java.io.PrintWriter;
@@ -14,10 +11,11 @@ import java.net.Socket;
 public class ClientController {
 
     @FXML TextArea ChatBox;
-    @FXML TextField ChatField, Username;
-    @FXML Button Send;
+    @FXML TextField ChatField, Username, UserPMessage;
+    @FXML Button Send, ViewStat;
     @FXML TextArea UserList;
     Client NewClient;
+    public String user;
 
     public ClientController(){
         NewClient = new Client();
@@ -50,13 +48,39 @@ public class ClientController {
         String Message = ChatField.getText();
         ChatBox.appendText( "You : " + Message + "\n");
         ChatField.setText("");
-        NewClient.SendMessage(Message);
+        if(NewClient.p_messageFlag == 1){
+            user = UserPMessage.getText();
+            NewClient.SendMessage(Message, user);
+        } else {
+            NewClient.SendMessage(Message, null);
+        }
+
     }
 
     @FXML
     public void Connect(){
         String User = Username.getText();
         NewClient.login(User);
+    }
+
+    @FXML
+    public void Hail(){
+       NewClient.hailFlag = 1;
+    }
+
+    @FXML
+    public void PMessage(){
+        NewClient.p_messageFlag = 1;
+    }
+
+    @FXML
+    public void Stat(){
+        NewClient.generateStat();
+    }
+
+    @FXML
+    public void Disconnect(){
+        NewClient.Quit();
     }
 
 

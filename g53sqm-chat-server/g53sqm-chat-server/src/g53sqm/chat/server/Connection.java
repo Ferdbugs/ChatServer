@@ -90,10 +90,10 @@ public class Connection implements Runnable {
 	}
 	
 	private void stat() {
-		String status = "There are currently "+serverReference.getNumberOfUsers()+" user(s) on the server ";
+		String status = "There are currently "+serverReference.getNumberOfUsers()+" user(s) on the server. ";
 		switch(state) {
 			case STATE_REGISTERED:
-				status += "You are logged im and have sent " + messageCount + " message(s)";
+				status += "You are logged in and have sent " + messageCount + " message(s)";
 				break;
 			
 			case STATE_UNREGISTERED:
@@ -124,7 +124,7 @@ public class Connection implements Runnable {
 	private void iden(String message) {
 		switch(state) {
 			case STATE_REGISTERED:
-				sendOverConnection("BAD you are already registerd with username " + username);
+				sendOverConnection("BAD you are already registered with username " + username);
 				break;
 			
 			case STATE_UNREGISTERED:
@@ -166,7 +166,7 @@ public class Connection implements Runnable {
 					int messageStart = message.indexOf(" ");
 					String user = message.substring(0, messageStart);
 					String pm = message.substring(messageStart+1);
-					if(serverReference.sendPrivateMessage("PM from " + username + ":" + pm, user)){
+					if(serverReference.sendPrivateMessage("PM from " + username + ": " + pm, user)){
 						sendOverConnection("OK your message has been sent");
 					} else {
 						sendOverConnection("BAD the user does not exist");
