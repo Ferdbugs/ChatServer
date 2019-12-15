@@ -109,9 +109,9 @@ public class Connection implements Runnable {
 				ArrayList<String> userList = serverReference.getUserList();
 				String userListString = new String();
 				for(String s: userList) {
-					userListString += s + ", ";
+					userListString += s + " ";
 				}
-				sendOverConnection("OK " + userListString);
+				sendOverConnection("USERS$@4412 " + userListString);
 				break;
 			
 			case STATE_UNREGISTERED:

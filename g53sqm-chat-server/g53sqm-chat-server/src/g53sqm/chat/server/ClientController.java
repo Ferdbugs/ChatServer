@@ -16,9 +16,8 @@ public class ClientController {
     @FXML TextArea ChatBox;
     @FXML TextField ChatField, Username;
     @FXML Button Send;
-    @FXML ListView Userlist;
+    @FXML TextArea UserList;
     Client NewClient;
-    Server NewServer;
 
     public ClientController(){
         NewClient = new Client();
@@ -32,7 +31,14 @@ public class ClientController {
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        ChatBox.appendText("Server : " + Message + "\n" );
+                            if (Message.contains("USERS$@4412")) {
+                                UserList.setText(Message.substring(11).replaceAll(" ","\n"));
+                            }
+                            else {
+                                if(!Message.equals("")) {
+                                    ChatBox.appendText("Server : " + Message + "\n");
+                                }
+                            }
                     }
                 });
             }
@@ -49,27 +55,9 @@ public class ClientController {
 
     @FXML
     public void Connect(){
-        String username = Username.getText();
-        String login = "IDEN ";
-        String login_username = login + username;
-        NewClient.writer.println(login_username);
-        NewClient.writer.flush();
+        String User = Username.getText();
+        NewClient.login(User);
     }
 
-    @FXML
-    public void DisplayUserList(){
-        NewServer.getUserList();
-
-    }
-
-    @FXML
-    public void UpdateChat(String Message){
-        ChatBox.setText(Message);
-    }
-
-    @FXML
-    public void SetText(){
-        ChatField.setText("Works!");
-    }
 
 }

@@ -3,11 +3,13 @@ import java.awt.*;
 import java.io.*;
 import java.net.Socket;
 
+
 public class Client {
 
     private Socket socket;
     private OnMessageReceivedListener listener;
     public PrintWriter writer;
+    private int loginFlag = 0;
 
 
     public Client(){
@@ -23,10 +25,18 @@ public class Client {
         }
 
     }
+    public void login(String Username){
+        String login = "IDEN ";
+        String login_username = login + Username;
+        writer.println(login_username);
+        writer.flush();
+        loginFlag = 1;
+    }
 
     public void addListener(OnMessageReceivedListener listener) {
         this.listener = listener;
         getMessage();
+        ListRequest();
     }
 
     public interface OnMessageReceivedListener {
@@ -42,7 +52,7 @@ public class Client {
                             InputStream inputStream = socket.getInputStream();
                             BufferedReader received = new BufferedReader(new InputStreamReader(inputStream));
                             while (true){
-                                String receive = received.readLine() ;
+                                String receive = received.readLine();
                                     if ( receive != null) //receive from server
                                     {
                                         listener.OnMessageReceived(receive);
@@ -57,6 +67,36 @@ public class Client {
                 }
         ).start();
     }
+
+    public void ListRequest(){
+        new Thread(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        while (true){
+                            try {
+                                if(loginFlag==1) {
+                                    //System.out.println("IT WORKS");
+                                    writer.println("LIST");
+                                    writer.flush();
+                                }
+
+                                Thread.sleep(500);
+
+                             }
+                             catch (Exception e){
+                                    e.printStackTrace();
+                                    break;
+                            }
+                        }
+
+                    }
+                }
+        ).start();
+
+    }
+
+
     public void SendMessage(String Message){
         try {
             writer.println(Message);
@@ -66,6 +106,7 @@ public class Client {
             System.err.println(e.getMessage());
         }
     }
+
 //    public void connect(){
 //
 //        BufferedReader Read;
