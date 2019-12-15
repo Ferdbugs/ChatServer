@@ -3,17 +3,22 @@ package g53sqm.chat.server;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+import javax.jws.soap.SOAPBinding;
+import java.io.PrintWriter;
 import java.net.Socket;
 
 public class ClientController {
 
     @FXML TextArea ChatBox;
-    @FXML TextField ChatField;
+    @FXML TextField ChatField, Username;
     @FXML Button Send;
+    @FXML ListView Userlist;
     Client NewClient;
+    Server NewServer;
 
     public ClientController(){
         NewClient = new Client();
@@ -27,7 +32,7 @@ public class ClientController {
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        ChatBox.appendText("\n" + "Server: " + Message );
+                        ChatBox.appendText("Server : " + Message + "\n" );
                     }
                 });
             }
@@ -37,9 +42,24 @@ public class ClientController {
     @FXML
     public void SendMsg(){
         String Message = ChatField.getText();
-        ChatBox.appendText("\n" + "You: " + Message);
+        ChatBox.appendText( "You : " + Message + "\n");
         ChatField.setText("");
         NewClient.SendMessage(Message);
+    }
+
+    @FXML
+    public void Connect(){
+        String username = Username.getText();
+        String login = "IDEN ";
+        String login_username = login + username;
+        NewClient.writer.println(login_username);
+        NewClient.writer.flush();
+    }
+
+    @FXML
+    public void DisplayUserList(){
+        NewServer.getUserList();
+
     }
 
     @FXML

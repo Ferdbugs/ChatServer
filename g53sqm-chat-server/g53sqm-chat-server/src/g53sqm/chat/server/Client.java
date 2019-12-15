@@ -1,4 +1,5 @@
 package g53sqm.chat.server;
+import java.awt.*;
 import java.io.*;
 import java.net.Socket;
 
@@ -6,7 +7,7 @@ public class Client {
 
     private Socket socket;
     private OnMessageReceivedListener listener;
-    private PrintWriter writer;
+    public PrintWriter writer;
 
 
     public Client(){
