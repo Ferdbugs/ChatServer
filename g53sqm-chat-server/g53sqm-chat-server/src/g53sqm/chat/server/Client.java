@@ -9,7 +9,6 @@ public class Client {
     private Socket socket;
     private OnMessageReceivedListener listener;
     public PrintWriter writer;
-    //public String user;
     private int loginFlag = 0;
     public int hailFlag = 0;
     public int p_messageFlag = 0;
@@ -113,28 +112,16 @@ public class Client {
 
     }
 
-//    public void SendHailMessage(String Message, String user){
-//        try {
-//            if (hailFlag == 1){
-//                Message = "HAIL " + Message;
-//            } else if (p_messageFlag == 1){
-//                Message = "MESG " + user + " " + Message;
-//            }
-//            writer.println(Message);
-//            writer.flush();
-//        }
-//        catch (Exception e){
-//            System.err.println(e.getMessage());
-//        }
-//    }
 
 
     public void SendMessage(String Message, String user){
         try {
             if (hailFlag == 1){
                 Message = "HAIL " + Message;
+                hailFlag = 0;
             } else if (p_messageFlag == 1){
                 Message = "MESG " + user + " " + Message;
+                p_messageFlag = 0;
             }
             writer.println(Message);
             writer.flush();
