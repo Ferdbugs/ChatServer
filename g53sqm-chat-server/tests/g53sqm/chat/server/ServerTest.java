@@ -1,92 +1,98 @@
 package g53sqm.chat.server;
 
 import junit.framework.TestCase;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.*;
 import java.net.Socket;
 
-import static org.junit.Assert.*;
-
-public class ServerTest extends TestCase {
+public class ServerTest extends TestCase{
     private static int port = 9000;
     private Socket socket = null;
     private ObjectOutputStream objOutputStream;
     private ObjectInputStream objInputStream;
+    private PrintWriter writer;
+    private BufferedReader received;
 
-    @Test
-    public void testClientCall() throws Exception {
-
-        getSocket();
-
-        objOutputStream.writeObject("This is a request from " + Thread.currentThread().getName());
-        objOutputStream.reset();
-        objOutputStream.writeObject(Boolean.TRUE);
-        objOutputStream.flush();
-        objOutputStream.reset();
-
-        Object obj = objInputStream.readObject();
-        objInputStream.readObject();
-
-        assertEquals("This is response.", obj);
-
-    }
-
-//    @Test
-//    public void testFailure(){
-//        fail("This is a check to make sure failures are reported");
-//    }
-
-    @Test
-    public void getSocket() throws IOException{
+    @BeforeClass
+    public void setUp() throws Exception {
         if(socket == null){
             try{
                 socket = new Socket("localhost", port);
-                BufferedOutputStream out = new BufferedOutputStream(socket.getOutputStream());
-                BufferedInputStream in = new BufferedInputStream(socket.getInputStream());
+                OutputStream OutputStream = socket.getOutputStream();
+                InputStream inputStream = socket.getInputStream();
 
-                objOutputStream = new ObjectOutputStream(out);
-                objInputStream = new ObjectInputStream(in);
+                writer = new PrintWriter(new OutputStreamWriter(OutputStream));
+                received = new BufferedReader(new InputStreamReader(inputStream));
 
             }
             catch(IOException e){
                 e.printStackTrace();
             }
         }
-        else {
-            objOutputStream.reset();
-            objOutputStream.writeByte(1);
-            objOutputStream.flush();
-            objOutputStream.reset();
-            objInputStream.readByte();
+    }
+
+    @After
+    public void tearDown() throws Exception {
+    }
+
+
+    @Test
+    public void testConnection(){
+        try{
+            setUp();
+            writer.println("This is a request");
+            writer.flush();
+            String message = received.readLine();
+            assertEquals("OK Welcome to the chat server, there are currently 1 user(s) online", message);
         }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+
+
     }
 
     @Test
-    public void getUserList() {
+    public void testgetUserList() {
     }
 
     @Test
-    public void doesUserExist() {
+    public void testdoesUserExist() {
+       try{
+           writer.println("IDEN Fara");
+           writer.flush();
+           received.readLine();
+           writer.println("LIST");
+           writer.flush();
+           String message = received.readLine();
+           assertTrue(message.contains("Fara"));
+           assertFalse(message.contains("Ferdous"));
+       }
+       catch(Exception e){
+           e.printStackTrace();
+        }
+
+
+
     }
 
     @Test
-    public void broadcastMessage() {
+    public void testbroadcastMessage() {
     }
 
     @Test
-    public void sendPrivateMessage() {
+    public void testsendPrivateMessage() {
     }
 
     @Test
-    public void removeDeadUsers() {
+    public void testremoveDeadUsers() {
     }
 
     @Test
-    public void getNumberOfUsers() {
-    }
-
-    @Test
-    public void testFinalize() {
+    public void testgetNumberOfUsers() {
     }
 }
