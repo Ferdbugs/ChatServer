@@ -1,11 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0e35565-6bd5-491e-b1ee-4eb6aff43ff2" name="Default Changelist" comment="" />
+    <list default="true" id="e0e35565-6bd5-491e-b1ee-4eb6aff43ff2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/g53sqm-chat-server/g53sqm/chat/server/ServerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/g53sqm/chat/server/ServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/g53sqm/chat/server/TestServerTest.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-335497961">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.33" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="3" />
+          <entry key="java" value="19" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="3" />
+          <entry key="JAVA" value="19" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="525" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="525" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/g53sqm-chat-server/src/g53sqm/chat/server/Runner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/g53sqm/chat/server/TestServerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -17,8 +84,71 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/tests/g53sqm/chat/server/ServerTest.java" />
+        <option value="$PROJECT_DIR$/tests/g53sqm/chat/server/TestServerTest.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="425" />
+    <option name="y" value="-25" />
+    <option name="width" value="1940" />
+    <option name="height" value="1100" />
+  </component>
   <component name="ProjectId" id="1UpoK2DP9XvY1CCfDiecfmI4FgJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="g53sqm-chat-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="g53sqm-chat-server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="g53sqm-chat-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="g53sqm-chat-server" type="462c0819:PsiDirectoryNode" />
+              <item name="g53sqm-chat-server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="g53sqm-chat-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="g53sqm-chat-server" type="462c0819:PsiDirectoryNode" />
+              <item name="g53sqm-chat-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="g53sqm-chat-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="g53sqm-chat-server" type="462c0819:PsiDirectoryNode" />
+              <item name="g53sqm-chat-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="g53sqm-chat-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="g53sqm-chat-server" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="g53sqm-chat-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="g53sqm-chat-server" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -30,7 +160,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576420469930" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576679622990" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -48,8 +178,20 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ServerTest">
-    <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.TestServerTest">
+    <configuration name="Runner" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="g53sqm.chat.server.Runner" />
       <module name="g53sqm-chat-server" />
       <extension name="coverage">
@@ -72,12 +214,11 @@
       </extension>
       <option name="PACKAGE_NAME" value="g53sqm.chat.server" />
       <option name="MAIN_CLASS_NAME" value="g53sqm.chat.server.ServerTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServerTest.broadcastMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ServerTest.testAlreadyLoggedIn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="g53sqm-chat-server" />
       <extension name="coverage">
         <pattern>
@@ -87,13 +228,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="g53sqm.chat.server" />
       <option name="MAIN_CLASS_NAME" value="g53sqm.chat.server.ServerTest" />
-      <option name="METHOD_NAME" value="broadcastMessage" />
+      <option name="METHOD_NAME" value="testAlreadyLoggedIn" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServerTest.testConnection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestServerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="g53sqm-chat-server" />
       <extension name="coverage">
         <pattern>
@@ -102,14 +243,28 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="g53sqm.chat.server" />
-      <option name="MAIN_CLASS_NAME" value="g53sqm.chat.server.ServerTest" />
+      <option name="MAIN_CLASS_NAME" value="g53sqm.chat.server.TestServerTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestServerTest.testConnection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="g53sqm-chat-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="g53sqm.chat.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="g53sqm.chat.server" />
+      <option name="MAIN_CLASS_NAME" value="g53sqm.chat.server.TestServerTest" />
       <option name="METHOD_NAME" value="testConnection" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServerTest.testdoesUserExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestServerTest.testgetUserList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="g53sqm-chat-server" />
       <extension name="coverage">
         <pattern>
@@ -118,8 +273,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="g53sqm.chat.server" />
-      <option name="MAIN_CLASS_NAME" value="g53sqm.chat.server.ServerTest" />
-      <option name="METHOD_NAME" value="testdoesUserExist" />
+      <option name="MAIN_CLASS_NAME" value="g53sqm.chat.server.TestServerTest" />
+      <option name="METHOD_NAME" value="testgetUserList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -127,18 +282,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Runner" />
+      <item itemvalue="JUnit.ServerTest.testAlreadyLoggedIn" />
       <item itemvalue="JUnit.ServerTest" />
-      <item itemvalue="JUnit.ServerTest.broadcastMessage" />
-      <item itemvalue="JUnit.ServerTest.testConnection" />
-      <item itemvalue="JUnit.ServerTest.testdoesUserExist" />
+      <item itemvalue="JUnit.TestServerTest" />
+      <item itemvalue="JUnit.TestServerTest.testgetUserList" />
+      <item itemvalue="JUnit.TestServerTest.testConnection" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestServerTest" />
+        <item itemvalue="JUnit.TestServerTest.testConnection" />
+        <item itemvalue="JUnit.TestServerTest.testgetUserList" />
         <item itemvalue="JUnit.ServerTest" />
-        <item itemvalue="Application.Runner" />
-        <item itemvalue="JUnit.ServerTest.testdoesUserExist" />
-        <item itemvalue="JUnit.ServerTest.testConnection" />
-        <item itemvalue="JUnit.ServerTest.broadcastMessage" />
+        <item itemvalue="JUnit.ServerTest.testAlreadyLoggedIn" />
       </list>
     </recent_temporary>
   </component>
@@ -166,6 +322,73 @@
       <updated>1576062830499</updated>
     </task>
     <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="TestServerTest - 2019.12.18 at 22h 18m 10s.xml">
+      <configuration name="TestServerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestServerTest - 2019.12.18 at 22h 19m 46s.xml">
+      <configuration name="TestServerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestServerTest - 2019.12.18 at 22h 20m 38s.xml">
+      <configuration name="TestServerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestServerTest - 2019.12.18 at 22h 21m 13s.xml">
+      <configuration name="TestServerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestServerTest - 2019.12.18 at 22h 21m 55s.xml">
+      <configuration name="TestServerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestServerTest - 2019.12.18 at 22h 23m 48s.xml">
+      <configuration name="TestServerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestServerTest - 2019.12.18 at 22h 25m 08s.xml">
+      <configuration name="TestServerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestServerTest - 2019.12.18 at 22h 31m 50s.xml">
+      <configuration name="TestServerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestServerTest - 2019.12.18 at 22h 32m 51s.xml">
+      <configuration name="TestServerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestServerTest - 2019.12.18 at 22h 33m 37s.xml">
+      <configuration name="TestServerTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25955734" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41218132" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576062983200">
@@ -236,5 +459,52 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1576590776429" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/requests/FilterRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/g53sqm-chat-server/src/g53sqm/chat/server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/g53sqm-chat-server/src/g53sqm/chat/server/ChatGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/g53sqm-chat-server/src/g53sqm/chat/server/Connection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="150" column="69" selection-start-line="150" selection-start-column="69" selection-end-line="150" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/g53sqm-chat-server/src/g53sqm/chat/server/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/g53sqm/chat/server/TestServerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
