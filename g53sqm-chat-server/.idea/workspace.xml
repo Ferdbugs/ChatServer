@@ -24,6 +24,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="425" />
+    <option name="y" value="-25" />
+    <option name="width" value="1940" />
+    <option name="height" value="1100" />
+  </component>
   <component name="ProjectId" id="1UpoK2DP9XvY1CCfDiecfmI4FgJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -92,7 +98,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="g53sqm.chat.server" />
       <option name="MAIN_CLASS_NAME" value="g53sqm.chat.server.ConnectionTestRegistered" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -123,7 +128,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="g53sqm.chat.server" />
       <option name="MAIN_CLASS_NAME" value="g53sqm.chat.server.ConnectionTestUnregistered" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -145,8 +149,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.ChatGUI" />
       <item itemvalue="Application.Runner" />
+      <item itemvalue="Application.ChatGUI" />
       <item itemvalue="JUnit.ConnectionTestRegistered" />
       <item itemvalue="JUnit.ConnectionTestRegistered.testBroadcastwithoutlogin" />
       <item itemvalue="JUnit.ConnectionTestUnregistered" />

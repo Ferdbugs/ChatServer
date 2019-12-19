@@ -67,6 +67,7 @@ public class ClientController {
     @FXML
     public void Hail(){
        NewClient.hailFlag = 1;
+       UserPMessage.setText("");
     }
 
     @FXML

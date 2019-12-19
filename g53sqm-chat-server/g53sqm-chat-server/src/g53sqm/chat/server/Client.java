@@ -12,7 +12,8 @@ public class Client {
     private int loginFlag = 0;
     public int hailFlag = 0;
     public int p_messageFlag = 0;
-
+    public BufferedReader received;
+    public InputStream inputStream;
 
     public Client(){
         int Port=9000;
@@ -21,6 +22,8 @@ public class Client {
             socket = new Socket("localhost",Port);
             OutputStream OutputStream = socket.getOutputStream();
             writer = new PrintWriter(new OutputStreamWriter(OutputStream));
+            inputStream = socket.getInputStream();
+            received = new BufferedReader(new InputStreamReader(inputStream));
         }
         catch (IOException e){
             System.err.println("Connection error!");
@@ -65,8 +68,7 @@ public class Client {
                     @Override
                     public void run() {
                         try {
-                            InputStream inputStream = socket.getInputStream();
-                            BufferedReader received = new BufferedReader(new InputStreamReader(inputStream));
+                            received = new BufferedReader(new InputStreamReader(inputStream));
                             while (true){
                                 String receive = received.readLine();
                                     if ( receive != null) //receive from server
