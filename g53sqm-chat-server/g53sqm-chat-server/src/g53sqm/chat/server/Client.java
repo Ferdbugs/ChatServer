@@ -131,35 +131,4 @@ public class Client {
         }
     }
 
-
-//    public void connect(){
-//
-//        BufferedReader Read;
-//
-//        int Port = 9000;
-//        try {
-//            socket = new Socket("localhost", Port);
-//            Read = new BufferedReader(new InputStreamReader(System.in));
-//            OutputStream OutputStream = socket.getOutputStream();
-//            PrintWriter writer = new PrintWriter(OutputStream,true);
-//            InputStream inputStream = socket.getInputStream();
-//            BufferedReader received = new BufferedReader(new InputStreamReader(inputStream));
-//
-//            while (true){
-//                send = Read.readLine();
-//                writer.println(send);
-//                writer.flush();
-//                if((receive = received.readLine()) != null) //receive from server
-//                {
-//                    System.out.println(receive); // displaying at DOS prompt
-//                }
-//            }
-//
-//        }
-//        catch (IOException e){
-//            System.err.println("Connection error!");
-//            e.printStackTrace();
-//        }
-//
-//    }
 }
