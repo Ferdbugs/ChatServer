@@ -22,6 +22,7 @@ public class ClientUnitTesting extends TestCase {
             TestClient = new Client();
             TestClient2 = new Client();
             TestClient.received.readLine();
+            TestClient2.received.readLine();
         }
         catch (IOException e){
             e.printStackTrace();
@@ -46,14 +47,30 @@ public class ClientUnitTesting extends TestCase {
         }
 
     }
-    public void testStat(){
+    public void testStatWithoutLogin(){
         try{
-//            TestClient.received.readLine();
             TestClient.generateStat();
             String message = TestClient.received.readLine();
             assertEquals("OK There are currently 2 user(s) on the server. You have not logged in yet",message);
             TestClient.Quit();
             TestClient2.Quit();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+    public void testStatLogin(){
+        try{
+//            TestClient.received.readLine();
+            TestClient.login("Koko");
+            TestClient.received.readLine();
+            TestClient.generateStat();
+            String message = TestClient.received.readLine();
+            assertEquals("OK There are currently 2 user(s) on the server. You are logged in and have sent 0 message(s)",message);
+            TestClient.Quit();
+            TestClient.received.readLine();
+            TestClient2.Quit();
+            TestClient2.received.readLine();
         }
         catch (IOException e){
             e.printStackTrace();
@@ -67,6 +84,19 @@ public class ClientUnitTesting extends TestCase {
             TestClient2.Quit();
         }
         catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+    public void testLoggedInQuit(){
+        try{
+            TestClient.login("Ferd");
+            TestClient.received.readLine();
+            TestClient.Quit();
+            String message = TestClient.received.readLine();
+            assertEquals("OK thank you for sending 0 message(s) with the chat service, goodbye. ",message);
+            TestClient2.Quit();
+        }
+        catch(IOException e){
             e.printStackTrace();
         }
     }
@@ -129,18 +159,6 @@ public class ClientUnitTesting extends TestCase {
             e.printStackTrace();
         }
     }
-    public void testLoggedInQuit(){
-        try{
-            TestClient.login("Ferd");
-            TestClient.received.readLine();
-            TestClient.Quit();
-            String message = TestClient.received.readLine();
-            assertEquals("OK thank you for sending 0 message(s) with the chat service, goodbye. ",message);
-            TestClient2.Quit();
-        }
-        catch(IOException e){
-            e.printStackTrace();
-        }
-    }
+
 
 }
