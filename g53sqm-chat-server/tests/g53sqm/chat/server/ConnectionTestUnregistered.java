@@ -1,39 +1,60 @@
 package g53sqm.chat.server;
 
-import junit.framework.TestCase;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 import java.io.*;
 import java.net.Socket;
+import org.junit.jupiter.api.*;
 
-public class ConnectionTestUnregistered extends TestCase{
-    private static int port = 9000;
-    private Socket socket = null;
-    private PrintWriter writer;
-    private BufferedReader received;
+import static org.junit.jupiter.api.Assertions.*;
 
-    public void setUp() {
-        if(socket == null){
-            try{
-                socket = new Socket("localhost", port);
-                OutputStream OutputStream = socket.getOutputStream();
-                InputStream inputStream = socket.getInputStream();
 
-                writer = new PrintWriter(new OutputStreamWriter(OutputStream));
-                received = new BufferedReader(new InputStreamReader(inputStream));
+public class ConnectionTestUnregistered {
+    static int port = 9000;
+    static Socket socket = null;
+    static PrintWriter writer;
+    static BufferedReader received;
+    static Server TestServer;
 
-            }
-            catch(IOException e){
-                e.printStackTrace();
-            }
+//    @Before
+//    public static void ServerSetup(){
+//        new Thread(()->{
+//            TestServer = new Server(port);
+//            TestServer.acceptConnections();
+//        }).start();
+//    }
+
+
+    @BeforeAll
+    public static void SetUpServer() {
+        try {
+            new Thread(()->{
+                TestServer = new Server(port);
+                TestServer.acceptConnections();
+            }).start();
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            System.out.println(e.getMessage());
         }
     }
 
+    private void setupClient(){
+        try{
+            socket = new Socket("localhost", port);
+            OutputStream OutputStream = socket.getOutputStream();
+            InputStream inputStream = socket.getInputStream();
+
+            writer = new PrintWriter(new OutputStreamWriter(OutputStream));
+            received = new BufferedReader(new InputStreamReader(inputStream));
+        }
+        catch(IOException e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Test
     public void testBroadcastwithoutlogin(){
         try{
+            setupClient();
             received.readLine();
             writer.println("HAIL Hello!");
             writer.flush();
@@ -46,8 +67,11 @@ public class ConnectionTestUnregistered extends TestCase{
             e.printStackTrace();
         }
     }
+
+    @Test
     public  void testPrivateMessagewithoutlogin(){
         try{
+            setupClient();
             received.readLine();
             writer.println("MESG Kola Hello!");
             writer.flush();
@@ -60,8 +84,11 @@ public class ConnectionTestUnregistered extends TestCase{
             e.printStackTrace();
         }
     }
+
+    @Test
     public void testMessageBadUser(){
         try{
+            setupClient();
             received.readLine();
             writer.println("IDEN Watt");
             writer.flush();
@@ -77,8 +104,10 @@ public class ConnectionTestUnregistered extends TestCase{
             e.printStackTrace();
         }
     }
+    @Test
     public void testMessageStatWithoutLogin(){
         try{
+            setupClient();
             received.readLine();
             writer.println("STAT");
             writer.flush();
@@ -91,9 +120,10 @@ public class ConnectionTestUnregistered extends TestCase{
             e.printStackTrace();
         }
     }
-
+    @Test
     public void testUnregisteredQuit(){
         try{
+            setupClient();
             received.readLine();
             writer.println("QUIT");
             writer.flush();
@@ -106,8 +136,10 @@ public class ConnectionTestUnregistered extends TestCase{
             e.printStackTrace();
         }
     }
+    @Test
     public void testListrequestunregistered(){
         try{
+            setupClient();
             received.readLine();
             writer.println("LIST");
             writer.flush();
@@ -120,8 +152,10 @@ public class ConnectionTestUnregistered extends TestCase{
             e.printStackTrace();
         }
     }
+    @Test
     public void testBadcommand(){
         try{
+            setupClient();
             received.readLine();
             writer.println("Any Command");
             writer.flush();
@@ -134,8 +168,10 @@ public class ConnectionTestUnregistered extends TestCase{
             e.printStackTrace();
         }
     }
+    @Test
     public void testInvalidcommand(){
         try{
+            setupClient();
             received.readLine();
             writer.println("AB");
             writer.flush();
