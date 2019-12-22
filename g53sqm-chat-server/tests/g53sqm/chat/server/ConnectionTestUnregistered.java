@@ -15,14 +15,6 @@ public class ConnectionTestUnregistered {
     static BufferedReader received;
     static Server TestServer;
 
-//    @Before
-//    public static void ServerSetup(){
-//        new Thread(()->{
-//            TestServer = new Server(port);
-//            TestServer.acceptConnections();
-//        }).start();
-//    }
-
 
     @BeforeAll
     public static void SetUpServer() {
@@ -52,7 +44,7 @@ public class ConnectionTestUnregistered {
     }
 
     @Test
-    public void testBroadcastwithoutlogin(){
+    public void testBroadcastWithoutLogin(){
         try{
             setupClient();
             received.readLine();
@@ -69,7 +61,7 @@ public class ConnectionTestUnregistered {
     }
 
     @Test
-    public  void testPrivateMessagewithoutlogin(){
+    public  void testPrivateMessageWithoutLogin(){
         try{
             setupClient();
             received.readLine();
@@ -137,7 +129,7 @@ public class ConnectionTestUnregistered {
         }
     }
     @Test
-    public void testListrequestunregistered(){
+    public void testListRequestUnregistered(){
         try{
             setupClient();
             received.readLine();
@@ -153,7 +145,7 @@ public class ConnectionTestUnregistered {
         }
     }
     @Test
-    public void testBadcommand(){
+    public void testBadCommand(){
         try{
             setupClient();
             received.readLine();
@@ -169,7 +161,7 @@ public class ConnectionTestUnregistered {
         }
     }
     @Test
-    public void testInvalidcommand(){
+    public void testInvalidCommand(){
         try{
             setupClient();
             received.readLine();

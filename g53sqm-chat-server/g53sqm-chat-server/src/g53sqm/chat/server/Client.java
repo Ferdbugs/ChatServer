@@ -120,10 +120,10 @@ public class Client {
         try {
             if (hailFlag == 1){
                 Message = "HAIL " + Message;
-                hailFlag = 0;
+                p_messageFlag = 0;
             } else if (p_messageFlag == 1){
                 Message = "MESG " + user + " " + Message;
-                p_messageFlag = 0;
+                hailFlag = 0;
             }
             writer.println(Message);
             writer.flush();

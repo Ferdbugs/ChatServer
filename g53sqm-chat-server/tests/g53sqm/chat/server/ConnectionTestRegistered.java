@@ -75,7 +75,7 @@ public class ConnectionTestRegistered {
 
     @Test
     @Order(3)
-    public void testgetUserList() {
+    public void testGetUserList() {
         try {
             setupClient();
             received.readLine();
@@ -91,7 +91,7 @@ public class ConnectionTestRegistered {
     }
 
     @Test
-    public void testdoesUserExist() {
+    public void testDoesUserExist() {
        try{
            setupClient();
            received.readLine();
