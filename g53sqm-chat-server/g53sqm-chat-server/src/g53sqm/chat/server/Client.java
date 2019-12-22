@@ -9,11 +9,11 @@ public class Client {
     private Socket socket;
     private OnMessageReceivedListener listener;
     public PrintWriter writer;
-    //public String user;
     private int loginFlag = 0;
     public int hailFlag = 0;
     public int p_messageFlag = 0;
-
+    public BufferedReader received;
+    public InputStream inputStream;
 
     public Client(){
         int Port=9000;
@@ -22,6 +22,8 @@ public class Client {
             socket = new Socket("localhost",Port);
             OutputStream OutputStream = socket.getOutputStream();
             writer = new PrintWriter(new OutputStreamWriter(OutputStream));
+            inputStream = socket.getInputStream();
+            received = new BufferedReader(new InputStreamReader(inputStream));
         }
         catch (IOException e){
             System.err.println("Connection error!");
@@ -66,8 +68,7 @@ public class Client {
                     @Override
                     public void run() {
                         try {
-                            InputStream inputStream = socket.getInputStream();
-                            BufferedReader received = new BufferedReader(new InputStreamReader(inputStream));
+                            received = new BufferedReader(new InputStreamReader(inputStream));
                             while (true){
                                 String receive = received.readLine();
                                     if ( receive != null) //receive from server
@@ -113,28 +114,16 @@ public class Client {
 
     }
 
-//    public void SendHailMessage(String Message, String user){
-//        try {
-//            if (hailFlag == 1){
-//                Message = "HAIL " + Message;
-//            } else if (p_messageFlag == 1){
-//                Message = "MESG " + user + " " + Message;
-//            }
-//            writer.println(Message);
-//            writer.flush();
-//        }
-//        catch (Exception e){
-//            System.err.println(e.getMessage());
-//        }
-//    }
 
 
     public void SendMessage(String Message, String user){
         try {
             if (hailFlag == 1){
                 Message = "HAIL " + Message;
+                p_messageFlag = 0;
             } else if (p_messageFlag == 1){
                 Message = "MESG " + user + " " + Message;
+                hailFlag = 0;
             }
             writer.println(Message);
             writer.flush();
@@ -144,35 +133,4 @@ public class Client {
         }
     }
 
-
-//    public void connect(){
-//
-//        BufferedReader Read;
-//
-//        int Port = 9000;
-//        try {
-//            socket = new Socket("localhost", Port);
-//            Read = new BufferedReader(new InputStreamReader(System.in));
-//            OutputStream OutputStream = socket.getOutputStream();
-//            PrintWriter writer = new PrintWriter(OutputStream,true);
-//            InputStream inputStream = socket.getInputStream();
-//            BufferedReader received = new BufferedReader(new InputStreamReader(inputStream));
-//
-//            while (true){
-//                send = Read.readLine();
-//                writer.println(send);
-//                writer.flush();
-//                if((receive = received.readLine()) != null) //receive from server
-//                {
-//                    System.out.println(receive); // displaying at DOS prompt
-//                }
-//            }
-//
-//        }
-//        catch (IOException e){
-//            System.err.println("Connection error!");
-//            e.printStackTrace();
-//        }
-//
-//    }
 }

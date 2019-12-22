@@ -5,21 +5,25 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="641.0" prefWidth="889.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g53sqm.chat.server.ClientController">
          <children>
             <Label layoutX="351.0" layoutY="13.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Username :" />
             <Button id="Connect_btn" fx:id="Connect_btn" layoutX="700.0" layoutY="8.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Connect" text="Login" />
-            <Button id="Disconnect_btn" fx:id="Disconnect_btn" layoutX="774.0" layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" text="Disconnect" />
+            <Button id="Disconnect_btn" fx:id="Disconnect_btn" layoutX="774.0" layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Disconnect" text="Disconnect" />
             <TextArea id="ChatBox" fx:id="ChatBox" editable="false" layoutX="344.0" layoutY="48.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="524.0" wrapText="true" />
             <Button id="Send" fx:id="Send" layoutX="772.0" layoutY="571.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#SendMsg" prefHeight="31.0" prefWidth="91.0" text="Send" />
             <TextField id="ChatField" fx:id="ChatField" layoutX="344.0" layoutY="572.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="406.0" />
             <TextField id="Username" fx:id="Username" layoutX="435.0" layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="206.0" />
       <Label layoutX="30.0" layoutY="14.0" text="Users Online :" />
       <TextArea fx:id="UserList" editable="false" layoutX="30.0" layoutY="48.0" prefHeight="247.0" prefWidth="295.0" />
-      <RadioButton id="Broadcast" fx:id="Broadcast" layoutX="30.0" layoutY="321.0" mnemonicParsing="false" onAction="#Hail" text="Broadcast Message" />
-      <RadioButton id="PMessage" fx:id="PMessage" layoutX="30.0" layoutY="367.0" mnemonicParsing="false" onAction="#PMessage" text="Personal Message" />
+      <RadioButton id="Broadcast" fx:id="Broadcast" layoutX="26.0" layoutY="321.0" mnemonicParsing="false" onAction="#Hail" text="Broadcast Message">
+         <toggleGroup>
+            <ToggleGroup fx:id="tgMessage" />
+         </toggleGroup></RadioButton>
+      <RadioButton id="PMessage" fx:id="PMessage" layoutX="30.0" layoutY="367.0" mnemonicParsing="false" onAction="#PMessage" text="Personal Message" toggleGroup="$tgMessage" />
       <Label layoutX="47.0" layoutY="409.0" text="Send to:" />
       <TextField layoutX="30.0" layoutY="437.0" />
       <TextField id="UserPMessage" fx:id="UserPMessage" layoutX="27.0" layoutY="438.0" prefHeight="31.0" prefWidth="301.0" />

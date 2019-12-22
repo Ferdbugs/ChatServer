@@ -4,9 +4,6 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-import javax.jws.soap.SOAPBinding;
-import java.io.PrintWriter;
-import java.net.Socket;
 
 public class ClientController {
 
@@ -14,8 +11,12 @@ public class ClientController {
     @FXML TextField ChatField, Username, UserPMessage;
     @FXML Button Send, ViewStat;
     @FXML TextArea UserList;
+    @FXML RadioButton Broadcast, PMessage;
+    @FXML ToggleGroup tgMessage;
     Client NewClient;
     public String user;
+
+
 
     public ClientController(){
         NewClient = new Client();
@@ -66,11 +67,14 @@ public class ClientController {
     @FXML
     public void Hail(){
        NewClient.hailFlag = 1;
+        NewClient.p_messageFlag = 0;
+        UserPMessage.setText("");
     }
 
     @FXML
     public void PMessage(){
         NewClient.p_messageFlag = 1;
+        NewClient.hailFlag = 0;
     }
 
     @FXML

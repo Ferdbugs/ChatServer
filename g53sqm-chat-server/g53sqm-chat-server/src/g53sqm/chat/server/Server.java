@@ -22,18 +22,21 @@ public class Server {
 			e.printStackTrace();
 		}
 		list = new ArrayList<Connection>();
+	}
+
+	public void acceptConnections(){
 		while(true) {
-				Connection c = null;
-				try {
-					c = new Connection(server.accept(), this);
-				}
-				catch (IOException e) {
-					System.err.println("error setting up new client conneciton");
-					e.printStackTrace();
-				}
-				Thread t = new Thread(c);
-				t.start();
-				list.add(c);
+			Connection c = null;
+			try {
+				c = new Connection(server.accept(), this);
+			}
+			catch (IOException e) {
+				System.err.println("error setting up new client conneciton");
+				e.printStackTrace();
+			}
+			Thread t = new Thread(c);
+			t.start();
+			list.add(c);
 		}
 	}
 	
@@ -92,14 +95,5 @@ public class Server {
 	protected void finalize() throws IOException{
 		server.close();
 	}
-//    public void AcceptClients(){
-//        while (true){
-//            try {
-//                Socket socket = server.accept();
-//            }catch (IOException e){
-//                System.out.println("Connection Failed!");
-//            }
-//        }
-//    }
-		
+
 }
